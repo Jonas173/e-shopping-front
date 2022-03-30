@@ -5,3 +5,9 @@
 .article {
     background-color: rgb(250, 250, 250);
 }
+
+.centerHorizontal{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}

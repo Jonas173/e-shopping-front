@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Rating from './rating';
-import logo from '../resources/logo192.png'
+import logo from '../resources/logo192.png';
 
 import './articleItem.css';
 
@@ -12,7 +12,9 @@ export class ArticleItem extends React.Component {
             reduced = <h2 className="reduced">{this.props.article.reducedFrom}€</h2>
 
         return <div className="article" onClick={this.props.onClick}>
-            <img src={logo} />
+            <div className="centerHorizontal">
+                <img className="image" src={this.props.article.logo} />
+            </div>
             <h3>{this.props.article.name}</h3>
             <Rating stars={this.props.article.rating} />
             <span>

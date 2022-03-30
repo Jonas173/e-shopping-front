@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import {useSelector} from 'react-redux';
 import ArticleItem from './articleitem';
 import './articlelist.css';
 
 import { bindActionCreators } from 'redux';
+
+
 import { connect } from 'react-redux';
 import { selectArticle } from '../actions/add-cart';
 
-class ArticleList extends React.Component {
+class ArticleList extends Component {
 
     render() {
         return <div>

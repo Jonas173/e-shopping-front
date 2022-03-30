@@ -5,9 +5,7 @@ import './navbar.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-
-class Navbar extends React.Component {
-
+class Navbar extends Component {
     render() {
         let strCart = this.props?.cart?.length > 0 ? `Cart (${this.props.cart.length})` : `Cart`;
 

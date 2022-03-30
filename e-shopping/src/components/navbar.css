@@ -1,15 +1,18 @@
 .flex-container {
     display: flex;
     justify-content: start;
-    background-color: rgb(88, 124, 99);
+    background-color: rgb(78, 88, 141);
 }
 
 .flex-item {
     color: white;
-    margin-left: 7px;
-    margin-right: 10px;
     text-decoration: none;
     list-style: none;
+}
+
+.flex-item *{
+    padding-left: 7px;
+    padding-right: 10px;
 }
 
 .flex-item:hover *{

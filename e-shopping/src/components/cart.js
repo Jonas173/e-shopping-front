@@ -1,13 +1,13 @@
 // Cart.js
-
 import React, { Component } from 'react';
+import CartList from './cartlist';
 
 class Cart extends Component {
   render() {
     return (
-        <div>
-          <h2>Cart</h2>
-        </div>
+      <div className="componentWrapper">
+        <CartList />
+      </div>
     );
   }
 }

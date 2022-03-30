@@ -6,7 +6,7 @@ import ArticleList from './articlelist';
 class Explore extends Component {
   render() {
     return (
-      <div>
+      <div className="componentWrapper">
         <ArticleList />
       </div>
     );
