@@ -25,3 +25,33 @@
     color:white;
     text-decoration: none;
 }
+
+.modal{
+    padding: 1em;
+    max-width: 30ch;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal::backdrop{
+    background-color: black;
+    opacity: 0.7;
+}
+
+.space-between{
+    display:flex;
+    justify-content: space-between;
+}
+
+.form{
+    margin-top: 20px;
+    display:grid;
+    grid-auto-flow: row;
+    grid-row-gap: 15px;
+}
+
+small{
+    color:red;
+}

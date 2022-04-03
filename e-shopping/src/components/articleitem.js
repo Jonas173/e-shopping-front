@@ -18,7 +18,7 @@ export class ArticleItem extends React.Component {
             <h3>{this.props.article.name}</h3>
             <Rating stars={this.props.article.rating} />
             <span>
-                <h2>{this.props.article.priceInEuro}€</h2>
+                <h2>{this.props.article.priceInEuro.toFixed(2)}€</h2>
                 {reduced}
             </span>
         </div>

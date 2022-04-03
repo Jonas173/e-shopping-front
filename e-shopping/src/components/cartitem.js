@@ -14,11 +14,11 @@ class CartItem extends Component {
                     </div>
                     <div>
                         <h3>{this.props.article.name}</h3>
-                        <p>Count: {this.props.count}</p>
+                        <p>Items: {this.props.count}</p>
                         <p>Ready to ship by {(new Date(2023, 2)).toLocaleDateString()}</p>
                         <input className="button" type="button" onClick={() => { this.props.deleteArticle(this.props.article); }} value="Remove"></input>
                     </div>
-                    <h4>{this.props.count * this.props.article.priceInEuro}€</h4></div>
+                    <h4>{(this.props.count * this.props.article.priceInEuro).toFixed(2)}€</h4></div>
             </div>
         );
     }

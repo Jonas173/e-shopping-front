@@ -5,9 +5,6 @@ import Home from './components/home';
 import Explore from './components/explore';
 import Cart from './components/cart';
 import Orders from './components/orders';
-import { createBrowserHistory } from 'history'
-
-const newHistory = createBrowserHistory();
 
 class App extends Component {
     render() {
