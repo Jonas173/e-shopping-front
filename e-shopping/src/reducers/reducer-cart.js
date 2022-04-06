@@ -2,6 +2,8 @@ let initialState = [];
 
 export default function (state = initialState, action) {
     switch (action.type) {
+        case "CLEAR_CART":
+            return [];
         case "ARTICLE_ADDED":
             return [...state, action.payload];
         case "ARTICLE_REMOVED":
@@ -25,6 +27,6 @@ export default function (state = initialState, action) {
 
             return [...state];
         default:
-            return initialState;
+            return state;
     }
 }

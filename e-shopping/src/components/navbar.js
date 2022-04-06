@@ -2,22 +2,25 @@ import React, { Component } from 'react';
 import '../index.css';
 import './navbar.css';
 
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { logIn } from '../actions/login';
+import { logOut } from '../actions/logout';
 
 class Navbar extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            loggedIn: false
-        }
+        
         this.loginOrOut = this.loginOrOut.bind(this);
         this.submit = this.submit.bind(this);
     }
 
     loginOrOut() {
-        if (this.state.loggedIn)
-            this.setState({ loggedIn: false});
+        if (this.props.user)
+            this.props.logOut();
         else
             this.openModal();
     }
@@ -52,13 +55,13 @@ class Navbar extends Component {
             return false;
         }
 
-        this.setState({ loggedIn: true});
+        this.props.logIn({ name: "<your last name>", firstName: "<your first name>" });
         this.closeModal();
     }
 
     render() {
         let strCart = this.props?.cart?.length > 0 ? `Cart (${this.props.cart.length})` : `Cart`;
-        let strLogin = this.state.loggedIn ? "Log out" : "Log in";
+        let strLogin = this.props.user ? "Log out" : "Log in";
 
         return <nav>
             <ul className="flex-container">
@@ -89,8 +92,13 @@ class Navbar extends Component {
 function mapStateToProps(state) {
     return {
         articles: state.articles,
-        cart: state.cart
+        cart: state.cart,
+        user: state.user
     };
 }
 
-export default connect(mapStateToProps)(Navbar)
+function matchDispatchToProps(dispatch){
+    return bindActionCreators({ logIn: logIn, logOut: logOut }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Navbar)

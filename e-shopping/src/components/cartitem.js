@@ -7,7 +7,7 @@ import './cartitem.css';
 class CartItem extends Component {
     render() {
         return (
-            <div className="cartitem">
+            <div className="orderitem">
                 <div className="tricol">
                     <div className="centerVertical">
                         <img className="image" src={this.props.article.logo}></img>
